@@ -21,7 +21,7 @@ const Hero = () => {
                     >
                         Discover
                     </h1>
-                    <h3 className='text-[20px]'>Your Amazing City</h3>
+                    <h3 className='text-[20px] text-[#999999]'>Your Amazing City</h3>
                     <form className=' flex items-center mx-auto w-[300px] gap-x-4 p-1 relative 
                         bg-white my-5 border hover:border-red-600 rounded-full
                         shadow-md'>
@@ -30,20 +30,21 @@ const Hero = () => {
                         />
                         <button onSubmit={handleSearch} className=' bg-red-600 w-8 rounded-full text-white p-1 mr-2 text-[12px]'>Go.</button>
                     </form>
-                    <div>
+                    <div className='flex flex-col justify-center items-center'>
                         <h4 className='text-[#999999]'>Browse Categories</h4>
                         <div className='flex gap-3 my-3 '>
                             {categories.map((cat) => (
                                 <div key={cat.id} className='flex flex-col items-center 
-                                    justify-center border-none bg-white bg-opacity-90 shadow-lg rounded-lg h-20 w-20 gap-2'
+                                    justify-center bg-white bg-opacity-90 shadow-lg 
+                                    rounded-xl h-[60px] w-[60px] gap-2 cursor-pointer border hover:border-red-600'
                                 >
-                                    <Image src={cat.icon} alt='icon' width={20} height={20} />
-                                    <h1 className='text-[15px]'>{cat.name}</h1>
+                                    <Image src={cat.icon} alt='icon' width={25} height={25} />
+
                                 </div>
                             ))}
                         </div>
-                        <Link href="/all">
-                            <h4 className='text-[#434343] cursor-pointer hover:text-red-600 relative'>More &gt;</h4>
+                        <Link href="/all" >
+                            <h4 className='text-[#434343] w-20 cursor-pointer hover:text-red-600 relative'>More &gt;</h4>
                         </Link>
                     </div>
                 </div>
