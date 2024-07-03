@@ -4,8 +4,8 @@ import logo from "../public/logo.jpg";
 
 const Header = () => {
     return (
-        <div className='w-full'>
-            <div className='container flex mx-auto justify-between p-2 shadow-sm'>
+        <div className='w-full shadow-md'>
+            <div className='container flex mx-auto justify-between p-2 '>
                 <div className='flex gap-3 items-center'>
                     <Image src={logo} alt='Logo' width={50} height={50} />
                     <h2 className='text-[15px] text-red-500 font-semibold tracking-widest'>Find.Where</h2>
