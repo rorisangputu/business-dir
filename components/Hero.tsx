@@ -13,7 +13,7 @@ const Hero = () => {
     return (
         <div className='w-full'>
             <div className='container text-center mx-auto flex flex-col items-center h-[45vh]'>
-                <Image src={bg} alt='hero-bg' className='opacity-40 absolute mx-auto w-full mt-[270px]' />
+                {/* <Image src={bg} alt='hero-bg' className='opacity-40 absolute mx-auto w-full mt-[290px] sm:mt-[250px]' /> */}
                 <div className='mt-[70px] relative'>
                     <h1
                         className='text-[55px] text-red-600 

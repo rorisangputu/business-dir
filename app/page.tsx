@@ -10,7 +10,7 @@ export default function Home() {
     const res = await fetch("/api/google-place-api?q=Hotels in Rustenburg");
     const data = await res.json();
 
-    //console.log(data.response.results);
+    console.log(data.response.results);
     setPlaceList(data.response.results);
   }
   const [placeList, setPlaceList] = useState([]);
