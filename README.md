@@ -62,14 +62,4 @@ A skeleton loader component used to show a loading state while the data is being
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Screenshots
 
-_Add some screenshots or GIFs of your application here to give users a visual overview._
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to modify any part of this README to better suit your project's specifics and add any additional information that you think is necessary.
