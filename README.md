@@ -2,9 +2,6 @@
 
 This is a business directory web application built using Next.js that integrates with the Google Places API. The application allows users to search for places, view detailed information about them, and see their locations on a map.
 
-## Live Demo
-
-You can view a live demo of the application [here](#). *(Replace `#` with the actual URL)*
 
 ## Features
 
