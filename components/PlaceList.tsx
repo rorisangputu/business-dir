@@ -4,6 +4,7 @@ import PlaceItem from './PlaceItem'
 
 
 const PlaceList = ({ placeList }: any) => { //passing any because object has many variables
+
     return (
         <div className='w-full'>
             <div className='px-[10px] md:px[120px] mt-7 container mx-auto'>
