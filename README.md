@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Google Places API Next.js Application
 
-## Getting Started
+This is a web application built using Next.js that integrates with the Google Places API. The application allows users to search for places, view detailed information about them, and see their locations on a map.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Search for Places**: Users can search for various places using the Google Places API.
+- **Display Place Information**: Detailed information about each place, such as name, address, rating, and opening hours.
+- **View Photos**: Displays photos of the places using the Google Places Photo service.
+- **Interactive Map**: Integrated Google Maps to show the location of the selected place.
+- **Responsive Design**: The application is responsive and works well on both desktop and mobile devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: A React framework for server-side rendering and generating static websites.
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Google Places API**: To fetch place details, photos, and location information.
+- **Google Maps API**: To display maps and place locations.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Components
 
-## Learn More
+### PlaceList
 
-To learn more about Next.js, take a look at the following resources:
+This component displays a list of places based on the search results. Each place item is clickable and will open a side drawer with more detailed information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### PlaceItem
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+A single place item component that shows basic information about a place such as its name and address.
 
-## Deploy on Vercel
+### SideDrawer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A side drawer component that shows detailed information about the selected place. This includes the place's name, address, rating, opening hours, photos, and a map showing its location.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Skeleton
+
+A skeleton loader component used to show a loading state while the data is being fetched.
+
+## How to Run the Project
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/google-places-nextjs.git
+    cd google-places-nextjs
+    ```
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Create a `.env.local` file in the root of the project and add your Google Places API key:
+    ```bash
+    NEXT_PUBLIC_PLACES_API=your_google_places_api_key
+    ```
+
+4. Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Screenshots
+
+_Add some screenshots or GIFs of your application here to give users a visual overview._
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to modify any part of this README to better suit your project's specifics and add any additional information that you think is necessary.
