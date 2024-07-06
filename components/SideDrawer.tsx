@@ -36,7 +36,7 @@ const SideDrawer = ({ place, close }: any) => {
                         <p className='text-lgfont-semibold'>{place.rating} <span className='text-[#a1a1a1] text-xs font-normal'>by: {place.user_ratings_total} people</span></p>
                     </div>
                 </div>
-                <div className='flex gap-x-3 mb-2 text-white mx-auto'>
+                <div className='flex gap-x-3 mb-5 text-white mx-auto'>
                     <div className='bg-red-600 hover:bg-red-700 cursor-pointer w-[150px] h-[40px] rounded-full flex items-center justify-center gap-x-2'>
                         <GrMapLocation />
                         <p>Directions</p>
@@ -48,11 +48,11 @@ const SideDrawer = ({ place, close }: any) => {
                 </div>
                 <div className='flex justify-center'>
                     <iframe
-                        className="border:0 h-[270px] w-[500px] md:w-[600px] "
+                        className="border:0 h-[270px] w-full rounded-xl md:w-[600px] "
                         loading="lazy"
                         allowfullscreen
                         referrerpolicy="no-referrer-when-downgrade"
-                        src={"https://www.google.com/maps/embed/v1/place?key=" + API_KEY + "&q=Space+Needle,Seattle+WA"}>
+                        src={"https://www.google.com/maps/embed/v1/place?key=" + API_KEY + "&q=" + place.name + "&center=" + place.geometry.location.lat + "," + place.geometry.location.lng}>
                     </iframe>
                 </div>
             </div>
