@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import PlaceItem from './PlaceItem'
 import SideDrawer from './SideDrawer'
+import { DiVim } from 'react-icons/di'
+import Skeleton from './Skeleton'
 
 
 const PlaceList = ({ placeList }: any) => { //passing any because object has many variables
@@ -16,6 +18,14 @@ const PlaceList = ({ placeList }: any) => { //passing any because object has man
                             <PlaceItem place={place} />
                         </div>
                     ))}
+
+                    {placeList.length == 0 ? <div className='flex '>
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
+                            <div key={index}>
+                                <Skeleton />
+                            </div>
+                        ))}
+                    </div> : null}
                 </div>
                 {selected?.name ? <div className='fixed top-0 right-0 z-20'>
                     <SideDrawer
