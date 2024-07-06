@@ -19,7 +19,7 @@ const PlaceList = ({ placeList }: any) => { //passing any because object has man
                         </div>
                     ))}
 
-                    {placeList.length == 0 ? <div className='flex '>
+                    {placeList.length == 0 ? <div className='flex'>
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
                             <div key={index}>
                                 <Skeleton />

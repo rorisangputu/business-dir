@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../public/logo.jpg";
 
 const Header = () => {
+    const [nav, setNav] = useState(false);
     return (
         <div className='w-full shadow-md'>
             <div className='container flex mx-auto justify-between p-2 '>
