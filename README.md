@@ -1,6 +1,6 @@
 # Google Places API Next.js Application
 
-This is a web application built using Next.js that integrates with the Google Places API. The application allows users to search for places, view detailed information about them, and see their locations on a map.
+This is a business directory web application built using Next.js that integrates with the Google Places API. The application allows users to search for places, view detailed information about them, and see their locations on a map.
 
 ## Features
 
