@@ -48,7 +48,7 @@ const Hero = ({ handleSearch }: any) => {
                                 </div>
                             ))}
                         </div>
-                        <Link href="/all" >
+                        <Link href="/" >
                             <h4 className='text-[#434343] w-20 cursor-pointer hover:text-red-600 relative'>More &gt;</h4>
                         </Link>
                     </div>
