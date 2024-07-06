@@ -6,8 +6,8 @@ import PlaceList from "@/components/PlaceList";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const getPlaceList = async () => {
-    const res = await fetch("/api/google-place-api?q=Hotels in Rustenburg");
+  const getPlaceList = async (value: string) => {
+    const res = await fetch("/api/google-place-api?q=" + value);
     const data = await res.json();
 
     console.log(data.response.results);
@@ -16,13 +16,13 @@ export default function Home() {
   const [placeList, setPlaceList] = useState([]);
 
   useEffect(() => {
-    getPlaceList();
+    getPlaceList('Bars in Cape Town');
   }, []);
 
   return (
     <>
       <Header />
-      <Hero />
+      <Hero handleSearch={(value: string) => getPlaceList(value)} />
       {placeList ? <PlaceList placeList={placeList} /> : null}
     </>
   );

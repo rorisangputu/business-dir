@@ -11,6 +11,9 @@ const PHOTO_URL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500
 const API_KEY = process.env.NEXT_PUBLIC_PLACES_API;
 
 const SideDrawer = ({ place, close }: any) => {
+    const onDirectionClick = () => {
+        window.open("https://www.google.com/maps/search/?key=" + API_KEY + "&q=" + place.name + place.formatted_address);
+    }
     return (
         <div
             className='h-screen w-screen md:w-[600px] border border-red-600 bg-white shadow-md p-3 z-20'>
@@ -25,7 +28,7 @@ const SideDrawer = ({ place, close }: any) => {
                     <p className='line-clamp-2 text-[23px] font-medium '>{place.name} </p>
                     <p className='font-light text-[#bbbbbb] text-[23px] '>{place.opening_hours ? "Open" : "Closed"}</p>
                 </div>
-                <Image className='object-fill mx-auto rounded-xl' src={PHOTO_URL + place.photos[0].photo_reference + "&key=" + API_KEY} alt='picture' width={500} height={500} />
+                <Image className='object-fill mx-auto w-full rounded-xl' src={PHOTO_URL + place.photos[0].photo_reference + "&key=" + API_KEY} alt='picture' width={500} height={500} />
                 <div className='my-5 mx-auto'>
                     <div className='flex items-center gap-x-2'>
                         <FaLocationDot className='text-red-600 text-2xl' />
@@ -37,7 +40,7 @@ const SideDrawer = ({ place, close }: any) => {
                     </div>
                 </div>
                 <div className='flex gap-x-3 mb-5 text-white mx-auto'>
-                    <div className='bg-red-600 hover:bg-red-700 cursor-pointer w-[150px] h-[40px] rounded-full flex items-center justify-center gap-x-2'>
+                    <div onClick={() => onDirectionClick()} className='bg-red-600 hover:bg-red-700 cursor-pointer w-[150px] h-[40px] rounded-full flex items-center justify-center gap-x-2'>
                         <GrMapLocation />
                         <p>Directions</p>
                     </div>

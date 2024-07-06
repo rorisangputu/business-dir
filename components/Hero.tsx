@@ -1,15 +1,14 @@
 "use client";
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import bg from '../public/bg.png';
 import { IoMdSearch } from "react-icons/io";
 import { categories } from '@/data/category';
 import Link from 'next/link';
 
-const Hero = () => {
-    const handleSearch = () => {
+const Hero = ({ handleSearch }: any) => {
+    const [input, setInput] = useState<string>();
 
-    }
     return (
         <div className='w-full'>
             <div className='container text-center mx-auto flex flex-col items-center h-[45vh]'>
@@ -22,14 +21,18 @@ const Hero = () => {
                         Discover
                     </h1>
                     <h3 className='text-[20px] text-[#999999]'>Your Amazing City</h3>
-                    <form className=' flex items-center mx-auto w-[300px] gap-x-4 p-1 relative 
+                    <div className=' flex items-center mx-auto w-[300px] gap-x-4 p-1 relative 
                         bg-white my-5 border hover:border-red-600 rounded-full
                         shadow-md'>
                         <IoMdSearch className='ml-3 h-5 w-5 text-red-600' />
-                        <input type="text" placeholder='Search..' className='focus:outline-none focus:shadow-none'
+                        <input
+                            type="text"
+                            onChange={(e) => setInput(e.target.value)}
+                            placeholder='Search..'
+                            className='focus:outline-none focus:shadow-none'
                         />
-                        <button onSubmit={handleSearch} className=' bg-red-600 w-8 rounded-full text-white p-1 mr-2 text-[12px]'>Go.</button>
-                    </form>
+                        <button onClick={() => handleSearch(input)} className=' bg-red-600 w-8 rounded-full text-white p-1 mr-2 text-[12px]'>Go.</button>
+                    </div>
                     <div className='flex flex-col justify-center items-center'>
                         <h4 className='text-[#999999]'>Browse Categories</h4>
                         <div className='flex gap-3 my-3 '>
