@@ -13,20 +13,20 @@ const API_KEY = process.env.NEXT_PUBLIC_PLACES_API;
 const SideDrawer = ({ place, close }: any) => {
     return (
         <div
-            className='h-screen w-screen md:w-[400px] bg-white shadow-md p-5 z-20'>
+            className='h-screen w-screen md:w-[600px] border border-red-600 bg-white shadow-md p-3 z-20'>
             <button
                 className='text-[30px] mx-5'
                 onClick={() => close()}
             >
                 <MdOutlineClose />
             </button>
-            <div className='mx-5 my-5'>
-                <div className='flex items-center justify-between mb-3'>
+            <div className='mx-5  my-5'>
+                <div className='flex flex-col justify-start mb-3 mx-auto'>
                     <p className='line-clamp-2 text-[23px] font-medium '>{place.name} </p>
                     <p className='font-light text-[#bbbbbb] text-[23px] '>{place.opening_hours ? "Open" : "Closed"}</p>
                 </div>
-                <Image className='object-fill rounded-xl' src={PHOTO_URL + place.photos[0].photo_reference + "&key=" + API_KEY} alt='picture' width={500} height={500} />
-                <div className='my-5'>
+                <Image className='object-fill mx-auto rounded-xl' src={PHOTO_URL + place.photos[0].photo_reference + "&key=" + API_KEY} alt='picture' width={500} height={500} />
+                <div className='my-5 mx-auto'>
                     <div className='flex items-center gap-x-2'>
                         <FaLocationDot className='text-red-600 text-2xl' />
                         <p className=' '>{place.formatted_address}</p>
@@ -36,7 +36,7 @@ const SideDrawer = ({ place, close }: any) => {
                         <p className='text-lgfont-semibold'>{place.rating} <span className='text-[#a1a1a1] text-xs font-normal'>by: {place.user_ratings_total} people</span></p>
                     </div>
                 </div>
-                <div className='flex gap-x-3 text-white'>
+                <div className='flex gap-x-3 mb-2 text-white mx-auto'>
                     <div className='bg-red-600 hover:bg-red-700 cursor-pointer w-[150px] h-[40px] rounded-full flex items-center justify-center gap-x-2'>
                         <GrMapLocation />
                         <p>Directions</p>
@@ -46,7 +46,15 @@ const SideDrawer = ({ place, close }: any) => {
                         <p>Share</p>
                     </div>
                 </div>
-
+                <div className='flex justify-center'>
+                    <iframe
+                        className="border:0 h-[270px] w-[500px] md:w-[600px] "
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src={"https://www.google.com/maps/embed/v1/place?key=" + API_KEY + "&q=Space+Needle,Seattle+WA"}>
+                    </iframe>
+                </div>
             </div>
         </div>
     )
