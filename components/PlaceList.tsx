@@ -18,7 +18,9 @@ const PlaceList = ({ placeList }: any) => { //passing any because object has man
                     ))}
                 </div>
                 {selected?.name ? <div className='fixed top-0 right-0 z-20'>
-                    <SideDrawer close={() => setSelected([])} />
+                    <SideDrawer
+                        place={selected}
+                        close={() => setSelected([])} />
                 </div> : null}
             </div>
         </div>
